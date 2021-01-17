@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var UserSchema = new mongoose.Schema({
+var DataSchema = new mongoose.Schema({
 	id: String,
 	name: String,
 	age: String,
@@ -9,6 +9,7 @@ var UserSchema = new mongoose.Schema({
 	phoneNo: String
 });
 
+const Data = mongoose.model('Data', DataSchema)
 
-module.exports = mongoose.model("Data", UserSchema);
+module.exports = Data;
 

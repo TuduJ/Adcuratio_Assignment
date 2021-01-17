@@ -22,9 +22,17 @@ const User = require('./models/user');
 const Data = require('./models/data');
 
 const sessionConfig = {
-	secret: 'blablablah'
-};
+	secret: 'blablablah',
+	// resave: false,
+	// saveUninitialized: true,
+	// cookie:{
+	// 	httpOnly: true,
+	// 	expire: Date.now() + 1000 * 60 * 60,
+	// 	maxAge: 1000 * 60 * 60
+	// }
+}
 
+app.use(session(sessionConfig))
 
 mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
@@ -47,7 +55,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session(sessionConfig));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -55,6 +62,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 
 app.use('/', indexRoutes);
 app.use('/users', usersRoutes);

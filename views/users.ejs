@@ -1,5 +1,30 @@
 <%- include('partials/header') %>
-	<% Data.forEach(function(data){ %>
-		<h1><%= data.name%></h1>
-	<% }) %>
+	
+
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Age</th>
+					<th scope="col">Gender</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Phone No</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% Data.forEach(function(data){ %>
+					<tr>
+						<th scope="col"><%= data.id%></th>
+						<th scope="col"><%= data.name%></th>
+						<th scope="col"><%= data.age%></th>
+						<th scope="col"><%= data.gender%></th>
+						<th scope="col"><%= data.email%></th>
+						<th scope="col"><%= data.phoneNo%></th>
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	</div>
 <%- include('partials/footer') %>

@@ -8,7 +8,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res) =>{
-	res.send(req.body)
+	try {
+		const {email, password} = req.body;
+		const user = new User({email});
+		const registerUser = User.register(user, password);
+		console.log(registerUser);
+		res.redirect('/users');
+	}catch(e){
+		console.log(e.message);
+		res.redirect("/");
+	}
 })
 
 module.exports = router;
