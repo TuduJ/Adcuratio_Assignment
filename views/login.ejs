@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+	
+    <div class="container-sm">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-8 border px-5 pb-5 shadow-sm p-3 bg-white rounded">
+                <form class="">
+                    <p class="text-center pt-3 h1"><strong><%=title%></strong></p>
+                    <h2 class="text-center mt-5">Create your account</h2>
+                    <div class="form-group">
+                        <input type="email" class="form-control mt-3" placeholder="Email Address" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="password" class="form-control mt-3" placeholder="Password" id="inputPassword3">
+                    </div>
+                    <medium id="disclaimer" class="form-text">Click here to <a href="/">SignUp</a></medium>
+                    <button id="signupButton" type="submit" class="btn btn-block btn-large mt-3 py-2 shadow"><strong>SIGN UP</strong></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>

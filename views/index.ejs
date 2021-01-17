@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+	
+    <div class="container-sm">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-8 border px-5 pb-5 shadow-sm p-3 bg-white rounded">
+                <form action="/" id="form" method="POST" class="needs-validation" novalidate>
+                    <p class="text-center pt-3 h1"><strong><%=title%></strong></p>
+                    <h2 class="text-center mt-5">Create your account</h2>
+                    <div class="form-group">
+    					<div>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+							<!-- <i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i> -->
+							<small id="text1" class="visually-hidden">Error</small>
+						</div>
+						<div>
+							<input type="password" class="form-control mt-3" type="password" id="password" name="password" placeholder="Password" required>
+							<!-- <i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i> -->
+							<small id="text2" class="visually-hidden">Error</small>
+						</div>
+                        <div>
+							<input type="password" class="form-control mt-3" type="password" id="cpassword" placeholder="Confirm Password" required>
+							<!-- <i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i> -->
+							<small id="text3" class="visually-hidden">Error</small>
+						</div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+						<medium id="disclaimer" class="form-text">Click here to <a href="/login">Login</a></medium>
+					</div>
+					<div>
+						<button id="signupButton" type="submit" class="btn btn-block btn-large mt-3 py-2 shadow btn-success"><strong>SIGN UP</strong></button>
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>
