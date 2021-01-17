@@ -19,6 +19,15 @@ const d1 = new Data(
 		email: "test1@gmail.com",
 		phoneNo: "9191919191"
 	})
+
+	d1.save().then(p => {
+		console.log(d1)
+	})
+	.catch(e => {
+		console.log(e)
+	})
+
+
 const d2 = new Data({
 		id: "2",
 		name: "test2",
@@ -27,6 +36,15 @@ const d2 = new Data({
 		email: "test2@gmail.com",
 		phoneNo: "9292929292"
 	})
+
+	d2.save().then(p => {
+		console.log(d2)
+	})
+	.catch(e => {
+		console.log(e)
+	})
+
+
 const d3 = new Data({
 		id: "3",
 		name: "test3",
@@ -36,23 +54,9 @@ const d3 = new Data({
 		phoneNo: "9393939393"
 })
 
-d1.save().then(p => {
-	console.log(d1)
-})
-.catch(e => {
-	console.log(e)
-})
-
-d2.save().then(p => {
-	console.log(d2)
-})
-.catch(e => {
-	console.log(e)
-})
-
-d3.save().then(p => {
-	console.log(d3)
-})
-.catch(e => {
-	console.log(e)
-})
+	d3.save().then(p => {
+		console.log(d3)
+	})
+	.catch(e => {
+		console.log(e)
+	})
