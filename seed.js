@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUn
 })
 
 
-const d = new Data(
+const d1 = new Data(
 	{
 		id: "1",
 		name: "test",
@@ -18,16 +18,16 @@ const d = new Data(
 		gender: "male",
 		email: "test1@gmail.com",
 		phoneNo: "9191919191"
-	},
-	{
+	})
+const d2 = new Data({
 		id: "2",
 		name: "test2",
 		age: "12",
 		gender: "male",
 		email: "test2@gmail.com",
 		phoneNo: "9292929292"
-	},
-	{
+	})
+const d3 = new Data({
 		id: "3",
 		name: "test3",
 		age: "13",
@@ -36,8 +36,22 @@ const d = new Data(
 		phoneNo: "9393939393"
 })
 
-d.save().then(p => {
-	console.log(d)
+d1.save().then(p => {
+	console.log(d1)
+})
+.catch(e => {
+	console.log(e)
+})
+
+d2.save().then(p => {
+	console.log(d2)
+})
+.catch(e => {
+	console.log(e)
+})
+
+d3.save().then(p => {
+	console.log(d3)
 })
 .catch(e => {
 	console.log(e)

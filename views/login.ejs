@@ -6,12 +6,24 @@
                 <form class="">
                     <p class="text-center pt-3 h1"><strong><%=title%></strong></p>
                     <h2 class="text-center mt-5">Create your account</h2>
-                    <div class="form-group">
-                        <input type="email" class="form-control mt-3" placeholder="Email Address" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <input type="password" class="form-control mt-3" placeholder="Password" id="inputPassword3">
-                    </div>
-                    <medium id="disclaimer" class="form-text">Click here to <a href="/">SignUp</a></medium>
-                    <button id="signupButton" type="submit" class="btn btn-block btn-large mt-3 py-2 shadow"><strong>SIGN UP</strong></button>
+                    <div>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+							<!-- <i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i> -->
+							<small id="text1" class="visually-hidden">Error</small>
+						</div>
+						<div>
+							<input type="password" class="form-control mt-3" type="password" id="password" name="password" placeholder="Password" required>
+							<!-- <i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i> -->
+							<small id="text2" class="visually-hidden">Error</small>
+						</div>
+                    <div class="d-flex justify-content-end">
+						<medium id="disclaimer" class="form-text">Click here to <a href="/">Login</a></medium>
+					</div>
+					<div>
+						<button id="signupButton" type="submit" class="btn btn-block btn-large mt-3 py-2 shadow btn-success"><strong>SIGN UP</strong></button>
+					</div>
                 </form>
             </div>
         </div>
