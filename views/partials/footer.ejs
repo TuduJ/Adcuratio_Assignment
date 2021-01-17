@@ -19,7 +19,10 @@
 	form.addEventListener('submit', (e)=> {
 		e.preventDefault();
 		
-		checkInputs();
+		
+		if(checkInputs()){
+			form.submit();	
+		}
 	});
 	
 	function checkInputs(){
@@ -29,26 +32,33 @@
 
 		if(emailValue === ''){
 			setError(email, "Email cannot be blank");
+			// return false;
 		}else if(!isEmail(emailValue)){
 			setError(email, "Email is not valid");
+			return false;
 		}else{
 			setSuccess(email);
 		}
 		
 		if(passwordValue === ''){
 			setError(password, "Password cannot be blank");
+			// return false;
 		}else if(!isPassword(passwordValue)){
 			setError(password, "Must Contain (A-Z, a-z, 0-9, special character)");
+			// return false;
 		}else{
 			setSuccess(password);
 		}
 		
 		if(cpasswordValue === ''){
 			setError(cpassword, "Password cannot be blank");
+			// return false;
 		}else if(passwordValue !== cpasswordValue){
 			setError(cpassword, "Password does not match");
+			return false;
 		}else{
 			setSuccess(cpassword);
+			return true;
 		}
 	}
 	
